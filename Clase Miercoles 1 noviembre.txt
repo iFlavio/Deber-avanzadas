@@ -1,0 +1,99 @@
+Sistema de control de versiones
+Permite adminsitrar los cambios en un conjunto de archivos de tal manera que podamos tener un historial de los cambios que ocurren
+veneficios:
+--¡habilita la bolaboracion
+-responsabilidad y visibilidad
+-trabajar de forma aislada
+-seguridad
+-trabajar en cualquier lugar
+
+De forma local utiliza una base de datos para dar seguimiento a lo que hace un archivo determinado
+Se almacena en un archivo principal (delta).
+Sistema de control de versiones distribuido
+
+Git
+es una implementacion de codigo abuerto que sirve para el sistema de control de versiones, se puede instalar en cualquier OS, y la diferencia es que almacena los datos en instantaneto
+Esta formada por 3 etapas y 3 estados.
+			:Working directory
+Modificacion de archivo en: Stagin area
+Cuando doy el ok al archivo: En el repositorio
+Puedo trabajar de forma local y remota
+Que es Branching
+Permite a los usuarios trabajr en el codigo de frma independiente, el branch puede ser de forma local y remota, la utilidad es 
+Gith es una implementacion de control de versiones distribuido y proporciona una interfaz de lina de comandos
+Github es una servicio proporcionado por Microsoft que implementa un servicio de alejamiento.	
+
+configuramos variables de entenor
+git config --global user.name "Flavio"
+git config --global user.email "fjerez0360@gmail.com"
+git config --list
+mkdir carpetagit
+cd carpetagit
+git init
+
+Creamos un archivo, con un mensaje
+$ echo "hoy es la colada morada" > archivo1.txt
+hacemos que este en el staisin area
+git add archivo1.txt
+$ git commit -m "Este archivo es un mensaje de la colada morada"
+MODIFICAMOS ESE ARCHIVO
+echo "porfavor no faltar" >> archivo1.txt
+hacemos que este en el staisin area
+git add archivo1.txt
+y lo enviamo al repositorios
+git commit -m "modificacion 2"
+Para ver los cambios que se realizo
+ git diff  d05dcd881f  e7798b487cae
+
+
+---------------BRANCH-----------------
+git branch
+git branch rama1
+git checkout rama1
+echo "hola WORLD" >> archivo1.txt
+git add archivo1.txt
+git commit -m "modificacion 3"
+git checkout master
+cat archivo1.txt
+unimos lo hecho en la rama1 para la rama master
+git merge rama1
+borramos la rama1
+git branch -d rama1
+cat archivo1.txt
+GENERAMOS UN CONFLICTO
+
+Creamos una nueva rama llamada test
+git branch test
+git checkout test
+git branch
+ sed -i 's/morada/roja/g' archivo1.txt
+
+
+git commit -a -m "modificacion de color"
+git checkout master
+git merge test
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
